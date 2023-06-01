@@ -1,7 +1,7 @@
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 
-export const Layout = ({ children }: any) => {
+export const Layout = () => {
   return (
     <>
       <Header />
