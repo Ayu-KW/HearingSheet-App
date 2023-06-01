@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* reset.css（自前・最低限） */
+/* reset.css */
 html {
   color: #000;
   background: #fff;
