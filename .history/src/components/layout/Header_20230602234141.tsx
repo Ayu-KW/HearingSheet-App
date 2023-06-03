@@ -3,9 +3,6 @@ import Head from "next/head";
 export const Header = () => {
   return (
     <>
-      <Head>
-        <title>ヒアリングシートアプリ</title>
-      </Head>
       <header className="bg-sky-600 p-4 text-white flex justify-around">
         <h1 className="text-2xl font-bold">ヒアリングシートアプリ</h1>
         <nav className="flex gap-6 items-center font-bold">
