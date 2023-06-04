@@ -58,7 +58,7 @@ export const AboutThisApp = () => {
       </section>
       <section className="m-auto mb-12 leading-loose">
         <h3 className="mb-4 py-1 px-3 bg-cyan-50 text-xl border-cyan-500 border-y-4 border-double">
-          3.制作者メッセージ
+          3.製作者メッセージ
         </h3>
         <div className="px-3">
           <div className="">
@@ -85,7 +85,6 @@ export const AboutThisApp = () => {
             <p>
               ※1件目は「ディレクション・企画・コーディング」を行い、2件目は「ディレクション・企画」を担当
             </p>
-            <p></p>
           </div>
         </div>
       </section>

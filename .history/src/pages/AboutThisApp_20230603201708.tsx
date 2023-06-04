@@ -58,7 +58,7 @@ export const AboutThisApp = () => {
       </section>
       <section className="m-auto mb-12 leading-loose">
         <h3 className="mb-4 py-1 px-3 bg-cyan-50 text-xl border-cyan-500 border-y-4 border-double">
-          3.制作者メッセージ
+          3.製作者メッセージ
         </h3>
         <div className="px-3">
           <div className="">
@@ -67,7 +67,7 @@ export const AboutThisApp = () => {
               Ayu）」と申します。名古屋在住、27歳の主婦です。
             </p>
             <p>
-              2023年6月現在はエンジニア転職（Web系）を目指しながら独学で学習しており、8月以降から本格的に転職活動を行おうとしております。
+              2023年6月現在ではエンジニア転職（Web系）を目指しながら独学で学習しており、8月以降から本格的に転職活動を行おうとしております。
             </p>
             <p></p>
           </div>
@@ -79,11 +79,7 @@ export const AboutThisApp = () => {
               本アプリを制作した背景
             </h4>
             <p>
-              このヒアリングシートアプリを制作した背景として「Web制作におけるディレクション（情報のまとめ方）の大変さ」を味わった為です。
-            </p>
-            <p>これまでにWebサイト制作の案件（エンド案件）を2件請け負いました。</p>
-            <p>
-              ※1件目は「ディレクション・企画・コーディング」を行い、2件目は「ディレクション・企画」を担当
+              このヒアリングシートアプリを制作した背景として「Webサイト制作の大変さ」を味わった経験があった為です。
             </p>
             <p></p>
           </div>

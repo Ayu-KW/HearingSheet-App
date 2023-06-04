@@ -58,7 +58,7 @@ export const AboutThisApp = () => {
       </section>
       <section className="m-auto mb-12 leading-loose">
         <h3 className="mb-4 py-1 px-3 bg-cyan-50 text-xl border-cyan-500 border-y-4 border-double">
-          3.制作者メッセージ
+          3.製作者メッセージ
         </h3>
         <div className="px-3">
           <div className="">
@@ -79,13 +79,9 @@ export const AboutThisApp = () => {
               本アプリを制作した背景
             </h4>
             <p>
-              このヒアリングシートアプリを制作した背景として「Web制作におけるディレクション（情報のまとめ方）の大変さ」を味わった為です。
+              このヒアリングシートアプリを制作した背景として「Webサイト制作の大変さ」を味わった経験があった為です。
             </p>
-            <p>これまでにWebサイト制作の案件（エンド案件）を2件請け負いました。</p>
-            <p>
-              ※1件目は「ディレクション・企画・コーディング」を行い、2件目は「ディレクション・企画」を担当
-            </p>
-            <p></p>
+            <p>Webサイト制作の案件（エンド案件）を2件請け負いましたが、</p>
           </div>
         </div>
       </section>
