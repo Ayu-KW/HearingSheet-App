@@ -8,7 +8,7 @@ type Props = {
 };
 
 // 共通のボタンコンポーネント
-const LinkButton = (props: Props) => {
+export const LinkButton = (props: Props) => {
   const { children, style } = props;
   return (
     <Link href={"/"} className={`rounded-md py-1 px-2 duration-500 ${style}`}>
