@@ -2,6 +2,8 @@ import LinkButton from "@/components/common/Button/LinkButton";
 import { getAllClientData } from "@/lib/NotionAPI";
 import React from "react";
 
+type Props = { allClientData: any };
+
 // NotionAPIデータ取得（Notionデータベースの顧客情報・全て）
 export const getStaticProps = async () => {
   const allClientData = await getAllClientData();
@@ -13,9 +15,7 @@ export const getStaticProps = async () => {
   };
 };
 
-// ⭐️allClientDataの型を何で受け取るか調べる
-const CustomerList = ({ allClientData }: any) => {
-  console.log(allClientData);
+const CustomerList = () => {
   return (
     <main className="lg:w-2/3 md:w-4/5 sm:w-11/12 m-auto font-mono py-36">
       <div className="text-center mb-10">

@@ -1,4 +1,5 @@
 import LinkButton from "@/components/common/Button/LinkButton";
+import { getAllClientData } from "@/lib/NotionAPI";
 import Link from "next/link";
 
 // 関数コンポーネント（メイン）

@@ -1,8 +1,22 @@
 import LinkButton from "@/components/common/Button/LinkButton";
+import { getAllClientData } from "@/lib/NotionAPI";
 import Link from "next/link";
 
-// 関数コンポーネント（メイン）
 export default function Home() {
+  export const getStaticProps = async () => {
+    // 非同期処理が終わりまで一時停止：await
+    // NotionAPIで取得したデータを読み込む（getAllPosts）
+    const allPosts = await getAllClientData();
+    // データを返す
+    return {
+      props: {
+        allPosts,
+      },
+      // revalidtate：決められた秒数ごとに更新（今回は60秒）
+      // 1日ごとの更新の場合は「60(秒:1分)*60(分:1時間)*24(時間))
+      revalidate: 60,
+    };
+  };
   return (
     <main className="lg:w-2/3 md:w-4/5 sm:w-11/12 m-auto font-mono py-36">
       <div className="text-center mb-14">
@@ -24,7 +38,7 @@ export default function Home() {
           >
             新規登録
             <span className="block pt-2 text-sm">
-              ヒアリング内容・顧客情報の新規登録はこちら
+              ヒアリング・顧客情報の新規登録はこちら
             </span>
           </LinkButton>
           <LinkButton
@@ -33,7 +47,7 @@ export default function Home() {
           >
             顧客一覧
             <span className="block pt-2 text-sm">
-              ヒアリング内容・顧客情報の確認・更新はこちら
+              ヒアリング・顧客情報の新規登録はこちら
             </span>
           </LinkButton>
         </div>

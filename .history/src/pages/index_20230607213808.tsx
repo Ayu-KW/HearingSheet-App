@@ -1,7 +1,16 @@
 import LinkButton from "@/components/common/Button/LinkButton";
+import { getAllClientData } from "@/lib/NotionAPI";
 import Link from "next/link";
 
-// 関数コンポーネント（メイン）
+export const getStaticProps = async () => {
+  const AllClientData = await getAllClientData();
+  return {
+    props: {
+      AllClientData,
+    },
+    revalidate: 60,
+  };
+};
 export default function Home() {
   return (
     <main className="lg:w-2/3 md:w-4/5 sm:w-11/12 m-auto font-mono py-36">
@@ -24,7 +33,7 @@ export default function Home() {
           >
             新規登録
             <span className="block pt-2 text-sm">
-              ヒアリング内容・顧客情報の新規登録はこちら
+              ヒアリング・顧客情報の新規登録はこちら
             </span>
           </LinkButton>
           <LinkButton
@@ -33,7 +42,7 @@ export default function Home() {
           >
             顧客一覧
             <span className="block pt-2 text-sm">
-              ヒアリング内容・顧客情報の確認・更新はこちら
+              ヒアリング・顧客情報の新規登録はこちら
             </span>
           </LinkButton>
         </div>

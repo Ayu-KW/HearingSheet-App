@@ -1,5 +1,17 @@
 import LinkButton from "@/components/common/Button/LinkButton";
+import { getAllClientData } from "@/lib/NotionAPI";
 import Link from "next/link";
+
+//
+// export const getStaticProps = async () => {
+//   const allClientData = await getAllClientData();
+//   return {
+//     props: {
+//       allClientData,
+//     },
+//     revalidate: 60 * 60 * 24,
+//   };
+// };
 
 // 関数コンポーネント（メイン）
 export default function Home() {
@@ -24,7 +36,7 @@ export default function Home() {
           >
             新規登録
             <span className="block pt-2 text-sm">
-              ヒアリング内容・顧客情報の新規登録はこちら
+              ヒアリング・顧客情報の新規登録はこちら
             </span>
           </LinkButton>
           <LinkButton
@@ -33,7 +45,7 @@ export default function Home() {
           >
             顧客一覧
             <span className="block pt-2 text-sm">
-              ヒアリング内容・顧客情報の確認・更新はこちら
+              ヒアリング・顧客情報の確認・更新はこちら
             </span>
           </LinkButton>
         </div>

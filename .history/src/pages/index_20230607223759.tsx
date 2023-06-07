@@ -1,5 +1,17 @@
 import LinkButton from "@/components/common/Button/LinkButton";
+import { getAllClientData } from "@/lib/NotionAPI";
 import Link from "next/link";
+
+// NotionAPIデータ取得（Notionデータベースの顧客情報・全て）
+export const getStaticProps = async () => {
+  const allClientData = await getAllClientData();
+  return {
+    props: {
+      allClientData,
+    },
+    revalidate: 60 * 60 * 24,
+  };
+};
 
 // 関数コンポーネント（メイン）
 export default function Home() {
