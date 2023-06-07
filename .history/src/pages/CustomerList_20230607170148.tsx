@@ -43,9 +43,9 @@ const CustomerList = () => {
           <tr>
             <td className="border-r border-r-blue-400 p-2 text-center">1</td>
             <td className="border-r border-r-blue-400 p-2">
-              くま株式会社／Kuma Engineering Service
+              くま株式会社／テストサービス
             </td>
-            <td className="border-r border-r-blue-400 p-2 text-center">クマさん</td>
+            <td className="border-r border-r-blue-400 p-2 text-center">テストさん</td>
             <td className="border-r border-r-blue-400 p-2 text-center">2023/6/5(月)</td>
             <td className="border-r border-r-blue-400 p-2 text-center">
               <LinkButton
