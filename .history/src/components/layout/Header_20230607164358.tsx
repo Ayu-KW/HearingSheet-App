@@ -13,18 +13,11 @@ export const Header = () => {
           <Link href={"/"}>ヒアリングシートアプリ</Link>
         </h1>
         <nav className="flex gap-6 items-center font-bold">
-          <Link
-            href={"/CustomerCreation"}
-            className="hover:border-b hover:border-b-white"
-          >
+          <Link href={"/CustomerCreation"} className=" underline-offset-2">
             新規登録
           </Link>
-          <Link href={"/CustomerList"} className="hover:border-b hover:border-b-white">
-            顧客一覧
-          </Link>
-          <Link href={"/AboutThisApp"} className="hover:border-b hover:border-b-white">
-            本アプリについて
-          </Link>
+          <Link href={"/CustomerList"}>顧客一覧</Link>
+          <Link href={"/AboutThisApp"}>本アプリについて</Link>
           <LinkButton style={"bg-rose-400 hover:bg-rose-300 py-1 px-2"} url={"/"}>
             ログアウト
           </LinkButton>
