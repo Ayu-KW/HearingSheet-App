@@ -26,14 +26,14 @@ export const getAllClientData = async () => {
   });
 };
 
-// Notionデータベースのプロパティを指定する;
+// Notionデータベースのプロパティを指定する
 const getClientDataProperties = (clientData: any) => {
   return {
     ClientIdPrefix: clientData.properties.ID.unique_id.prefix,
     ClientIdNumber: clientData.properties.ID.unique_id.number,
-    ClientComponyName: clientData.properties.CompanyName.title[0]?.plain_text || "",
-    ClientServiceName: clientData.properties.ServiceName.rich_text[0]?.plain_text || "",
-    ClientHearingDay: clientData.properties.HearingDay.date?.start || "",
-    InputRepPerson: clientData.properties.InputRepPerson.people[0]?.name || "",
+    ClientComponyName: clientData.properties.CompanyName.title[0].plain_text,
+    // ClientServiceName: clientData.properties.ServiceName.rich_text[0].text.content,
+    // ClientHearingDay: clientData.properties.HearingDay.date.start,
+    InputRepPerson: clientData.properties.InputRepPerson.people[0].name,
   };
 };

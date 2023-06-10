@@ -1,5 +1,6 @@
 import LinkButton from "@/components/common/Button/LinkButton";
 import { getAllClientData } from "@/lib/NotionAPI";
+import React, { ReactNode } from "react";
 
 // NotionAPIデータ取得（Notionデータベースの顧客情報・全て）
 export const getStaticProps = async () => {
@@ -12,7 +13,7 @@ export const getStaticProps = async () => {
   };
 };
 
-type ClientData = {
+type AllClientData = {
   ClientIdPrefix: string;
   ClientIdNumber: number;
   ClientComponyName: string;
@@ -22,8 +23,8 @@ type ClientData = {
 };
 
 // allClientDataの型を何で受け取るか調べる
-const CustomerList: React.FC<{ allClientData: ClientData[] }> = ({ allClientData }) => {
-  console.log(allClientData[0]);
+const CustomerList = (allClientData: any) => {
+  console.log(allClientData);
   return (
     <main className="lg:w-2/3 md:w-4/5 sm:w-11/12 m-auto font-mono py-36">
       <div className="text-center mb-10">
@@ -80,7 +81,9 @@ const CustomerList: React.FC<{ allClientData: ClientData[] }> = ({ allClientData
           </tr>
         </tbody>
       </table>
-      <div></div>
+      <div>
+        {allClientData.map(()=>())}
+      </div>
     </main>
   );
 };
