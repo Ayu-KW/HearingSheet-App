@@ -23,7 +23,6 @@ type ClientData = {
 
 // allClientDataの型を何で受け取るか調べる
 const CustomerList: React.FC<{ allClientData: ClientData[] }> = ({ allClientData }) => {
-  console.log(allClientData[0]);
   return (
     <main className="lg:w-2/3 md:w-4/5 sm:w-11/12 m-auto font-mono py-36">
       <div className="text-center mb-10">
@@ -62,13 +61,19 @@ const CustomerList: React.FC<{ allClientData: ClientData[] }> = ({ allClientData
           </tr>
         </thead>
         <tbody>
+          {allClientData.map((clientData) => (
+
           <tr>
             <td className="border-r border-r-blue-400 p-2 text-center">1</td>
             <td className="border-r border-r-blue-400 p-2">
-              くま株式会社／Kuma Engineering Service
+              {allClientData[0].ClientComponyName}／{allClientData[0].ClientServiceName}
             </td>
-            <td className="border-r border-r-blue-400 p-2 text-center">クマさん</td>
-            <td className="border-r border-r-blue-400 p-2 text-center">2023/6/5(月)</td>
+            <td className="border-r border-r-blue-400 p-2 text-center">
+              {allClientData[0].InputRepPerson}
+            </td>
+            <td className="border-r border-r-blue-400 p-2 text-center">
+              {allClientData[0].ClientHearingDay}
+            </td>
             <td className="border-r border-r-blue-400 p-2 text-center">
               <LinkButton
                 style="bg-teal-500 hover:bg-teal-300 text-white py-1 px-2"
@@ -78,9 +83,9 @@ const CustomerList: React.FC<{ allClientData: ClientData[] }> = ({ allClientData
               </LinkButton>
             </td>
           </tr>
+          )}
         </tbody>
       </table>
-      <div></div>
     </main>
   );
 };

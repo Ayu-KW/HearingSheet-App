@@ -28,7 +28,7 @@ export const getAllClientData = async () => {
 
 // Notionデータベースのプロパティを指定する;
 const getClientDataProperties = (clientData: any) => {
-  return {
+  const ClientId = {}
     ClientIdPrefix: clientData.properties.ID.unique_id.prefix,
     ClientIdNumber: clientData.properties.ID.unique_id.number,
     ClientComponyName:

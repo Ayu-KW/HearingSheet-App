@@ -14,7 +14,7 @@ export const Header = () => {
         </h1>
         <nav className="flex gap-6 items-center font-bold">
           <Link
-            href={"/Customers/CustomerCreation"}
+            href={"/Customers//CustomerCreation"}
             className="hover:border-b hover:border-b-white"
           >
             新規登録

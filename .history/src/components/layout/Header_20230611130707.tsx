@@ -14,13 +14,13 @@ export const Header = () => {
         </h1>
         <nav className="flex gap-6 items-center font-bold">
           <Link
-            href={"/Customers/CustomerCreation"}
+            href={"/Customer//CustomerCreation"}
             className="hover:border-b hover:border-b-white"
           >
             新規登録
           </Link>
           <Link
-            href={"/Customers/CustomerList"}
+            href={"/Customer/CustomerList"}
             className="hover:border-b hover:border-b-white"
           >
             顧客一覧
