@@ -12,7 +12,6 @@ export const getStaticProps = async () => {
   };
 };
 
-// データ内容の型定義
 type ClientData = {
   ClientIdPrefix: string;
   ClientIdNumber: number;
@@ -22,9 +21,8 @@ type ClientData = {
   InputRepPerson: string;
 };
 
-//
+// allClientDataの型を何で受け取るか調べる
 const CustomerList: React.FC<{ allClientData: ClientData[] }> = ({ allClientData }) => {
-  console.log({ allClientData });
   return (
     <main className="lg:w-2/3 md:w-4/5 sm:w-11/12 m-auto font-mono py-36">
       <div className="text-center mb-10">
@@ -65,7 +63,7 @@ const CustomerList: React.FC<{ allClientData: ClientData[] }> = ({ allClientData
         <tbody>
           {allClientData.map((clientData, index) => (
             <tr className="border-b border-dashed border-b-gray-200" key={index}>
-              <td className="border-r border-r-blue-400 p-2 text-center">{`${clientData.ClientIdPrefix}-${clientData.ClientIdNumber}`}</td>
+              <td className="border-r border-r-blue-400 p-2 text-center">{`${clientData.ClientIdPrefix}_${clientData.ClientIdNumber}`}</td>
               <td className="border-r border-r-blue-400 p-2">
                 {clientData.ClientComponyName} ／ {clientData.ClientServiceName}
               </td>

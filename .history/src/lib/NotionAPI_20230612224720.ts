@@ -65,5 +65,7 @@ export const getSingleClientData = async (companyName: string, serviceName: stri
     },
   });
   const clientPage = response.results[0];
-  return getClientDataProperties(clientPage);
+  return {
+    getClientDataProperties(clientData: any);
+  };
 };

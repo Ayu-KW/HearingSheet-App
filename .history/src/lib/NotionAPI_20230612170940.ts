@@ -39,7 +39,8 @@ const getClientDataProperties = (clientData: any) => {
   };
 };
 
-// 会社名＆サービス名合致・Notionデータベースの顧客情報を限定的に取得
+// IDの部分を基準・Notionデータベースの顧客情報を限定的に取得
+// 実験：CompanyName（はじめ株式会社）での取得は成功＝IDで取得したい
 export const getSingleClientData = async (companyName: string, serviceName: string) => {
   const response = await notion.databases.query({
     database_id: process.env.NOTION_DATABASE_ID!,
@@ -48,22 +49,20 @@ export const getSingleClientData = async (companyName: string, serviceName: stri
         {
           property: "CompanyName",
           formula: {
-            string: {
-              equals: companyName,
-            },
+            equals: companyName,
           },
         },
         {
           property: "ServiceName",
-          formula: {
-            string: {
-              equals: serviceName,
-            },
+          text: {
+            equals: serviceName,
           },
         },
       ],
     },
   });
   const clientPage = response.results[0];
-  return getClientDataProperties(clientPage);
+  return {
+    clientPage,
+  };
 };

@@ -33,37 +33,30 @@ const getClientDataProperties = (clientData: any) => {
     ClientIdNumber: clientData.properties.ID.unique_id.number,
     ClientComponyName:
       clientData.properties.CompanyName.title[0]?.plain_text || "（未入力）",
-    ClientServiceName: clientData.properties.ServiceName.rich_text[0]?.plain_text || "ー",
+    ClientServiceName:
+      clientData.properties.ServiceName.rich_text[0]?.plain_text || "（未入力）",
     ClientHearingDay: clientData.properties.HearingDay.date?.start || "ー",
     InputRepPerson: clientData.properties.InputRepPerson.people[0]?.name || "ー",
   };
 };
 
-// 会社名＆サービス名合致・Notionデータベースの顧客情報を限定的に取得
-export const getSingleClientData = async (companyName: string, serviceName: string) => {
+// IDの部分を基準・Notionデータベースの顧客情報を限定的に取得
+// 修正中
+export const getSingleClientData = async (ClientID: any) => {
   const response = await notion.databases.query({
     database_id: process.env.NOTION_DATABASE_ID!,
     filter: {
-      and: [
-        {
-          property: "CompanyName",
-          formula: {
-            string: {
-              equals: companyName,
-            },
-          },
+      property: "ID",
+      formula: {
+        string: {
+          equals: slug,
         },
-        {
-          property: "ServiceName",
-          formula: {
-            string: {
-              equals: serviceName,
-            },
-          },
-        },
-      ],
+      },
     },
   });
-  const clientPage = response.results[0];
-  return getClientDataProperties(clientPage);
+  const page = response.results[0];
+  console.log(page);
+  return {
+    page,
+  };
 };
