@@ -71,10 +71,10 @@ const CustomerList: React.FC<{ allClientData: ClientData[] }> = ({ allClientData
                 {clientData.ClientServiceName || "（未入力）"}
               </td>
               <td className="border-r border-r-blue-400 p-2 text-center">
-                {clientData.InputRepPerson || "ー"}
+                {clientData.InputRepPerson}
               </td>
               <td className="border-r border-r-blue-400 p-2 text-center">
-                {clientData.ClientHearingDay || "ー"}
+                {clientData.ClientHearingDay}
               </td>
               <td className="border-r border-r-blue-400 p-2 text-center">
                 <LinkButton

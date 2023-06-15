@@ -30,10 +30,12 @@ const getClientDataProperties = (clientData: any) => {
   return {
     // ClientIdPrefix: clientData.properties?.ID?.unique_id?.prefix || "ー",
     // ClientIdNumber: clientData.properties?.ID?.unique_id?.number || "ー",
-    ClientComponyName: clientData.properties?.CompanyName?.title[0]?.plain_text || "",
+    ClientComponyName:
+      clientData.properties?.CompanyName?.title[0]?.plain_text || "（未入力）",
+    // Notionデータベース上のサービス名が（空）だとエラーになる：そのうち解消しよう
     ClientServiceName: clientData.properties?.ServiceName?.rich_text[0]?.plain_text || "",
-    ClientHearingDay: clientData.properties?.HearingDay?.date?.start || "",
-    InputRepPerson: clientData.properties?.InputRepPerson?.people[0]?.name || "",
+    ClientHearingDay: clientData.properties?.HearingDay?.date?.start || "ー",
+    InputRepPerson: clientData.properties?.InputRepPerson?.people[0]?.name || "ー",
   };
 };
 

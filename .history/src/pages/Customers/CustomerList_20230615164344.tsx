@@ -63,29 +63,38 @@ const CustomerList: React.FC<{ allClientData: ClientData[] }> = ({ allClientData
           </tr>
         </thead>
         <tbody>
-          {allClientData.map((clientData, index) => (
-            <tr className="border-b border-dashed border-b-gray-200" key={index}>
-              <td className="border-r border-r-blue-400 p-2 text-center">{index + 1}</td>
-              <td className="border-r border-r-blue-400 p-2">
-                {clientData.ClientComponyName} ／{" "}
-                {clientData.ClientServiceName || "（未入力）"}
-              </td>
-              <td className="border-r border-r-blue-400 p-2 text-center">
-                {clientData.InputRepPerson || "ー"}
-              </td>
-              <td className="border-r border-r-blue-400 p-2 text-center">
-                {clientData.ClientHearingDay || "ー"}
-              </td>
-              <td className="border-r border-r-blue-400 p-2 text-center">
-                <LinkButton
-                  style="bg-teal-500 hover:bg-teal-300 text-white py-1 px-2"
-                  url={`${clientData.ClientComponyName}_${clientData.ClientServiceName}`}
-                >
-                  詳細
-                </LinkButton>
-              </td>
-            </tr>
-          ))}
+          {allClientData.map((clientData, index) => {
+            const {
+              ClientComponyName = "（未入力）",
+              ClientServiceName = clientData.ClientServiceName || "（未入力）",
+              InputRepPerson = "ー",
+              ClientHearingDay = "ー",
+            } = clientData;
+            return (
+              <tr className="border-b border-dashed border-b-gray-200" key={index}>
+                <td className="border-r border-r-blue-400 p-2 text-center">
+                  {index + 1}
+                </td>
+                <td className="border-r border-r-blue-400 p-2">
+                  {ClientComponyName} ／ {ClientServiceName}
+                </td>
+                <td className="border-r border-r-blue-400 p-2 text-center">
+                  {InputRepPerson}
+                </td>
+                <td className="border-r border-r-blue-400 p-2 text-center">
+                  {ClientHearingDay}
+                </td>
+                <td className="border-r border-r-blue-400 p-2 text-center">
+                  <LinkButton
+                    style="bg-teal-500 hover:bg-teal-300 text-white py-1 px-2"
+                    url={`${ClientComponyName}_${ClientServiceName}`}
+                  >
+                    詳細
+                  </LinkButton>
+                </td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </main>

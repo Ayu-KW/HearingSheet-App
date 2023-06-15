@@ -63,18 +63,17 @@ const CustomerList: React.FC<{ allClientData: ClientData[] }> = ({ allClientData
           </tr>
         </thead>
         <tbody>
-          {allClientData.map((clientData, index) => (
+          {allClientData.map((clientData, index) => {
             <tr className="border-b border-dashed border-b-gray-200" key={index}>
               <td className="border-r border-r-blue-400 p-2 text-center">{index + 1}</td>
               <td className="border-r border-r-blue-400 p-2">
-                {clientData.ClientComponyName} ／{" "}
-                {clientData.ClientServiceName || "（未入力）"}
+                {clientData.ClientComponyName} ／ {clientData.ClientServiceName}
               </td>
               <td className="border-r border-r-blue-400 p-2 text-center">
-                {clientData.InputRepPerson || "ー"}
+                {clientData.InputRepPerson}
               </td>
               <td className="border-r border-r-blue-400 p-2 text-center">
-                {clientData.ClientHearingDay || "ー"}
+                {clientData.ClientHearingDay}
               </td>
               <td className="border-r border-r-blue-400 p-2 text-center">
                 <LinkButton
@@ -84,8 +83,8 @@ const CustomerList: React.FC<{ allClientData: ClientData[] }> = ({ allClientData
                   詳細
                 </LinkButton>
               </td>
-            </tr>
-          ))}
+            </tr>;
+          })}
         </tbody>
       </table>
     </main>

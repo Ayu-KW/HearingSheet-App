@@ -34,9 +34,9 @@ const CustomerServiceName = ({ clientPage }: any) => {
   console.log(clientPage);
   return (
     <main className="lg:w-2/3 md:w-4/5 sm:w-11/12 m-auto font-mono py-36">
-      <p>Company Name: {clientPage.ClientComponyName}</p>
-      <p>Service Name: {clientPage.ClientServiceName || "（未入力）"}</p>
-      <p>制作側 担当者: {clientPage.InputRepPerson || "ー"}</p>
+      <p>Company Name: {clientPage.ClientComponyName || "（未入力）"}</p>
+      <p>Service Name: {clientPage.ClientServiceName || ""}</p>
+      <p>制作側 担当者: {clientPage.InputRepPerson || ""}</p>
     </main>
   );
 };

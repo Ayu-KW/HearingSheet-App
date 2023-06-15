@@ -19,7 +19,6 @@ export const getAllClientData = async () => {
   });
   const allClientData = clientData.results;
   // 顧客情報１つずつのプロパティを取り出す
-  // return allClientData;
   return allClientData.map((clientData) => {
     return getClientDataProperties(clientData);
   });
@@ -28,12 +27,14 @@ export const getAllClientData = async () => {
 // Notionデータベースのプロパティを指定する
 const getClientDataProperties = (clientData: any) => {
   return {
-    // ClientIdPrefix: clientData.properties?.ID?.unique_id?.prefix || "ー",
-    // ClientIdNumber: clientData.properties?.ID?.unique_id?.number || "ー",
-    ClientComponyName: clientData.properties?.CompanyName?.title[0]?.plain_text || "",
-    ClientServiceName: clientData.properties?.ServiceName?.rich_text[0]?.plain_text || "",
-    ClientHearingDay: clientData.properties?.HearingDay?.date?.start || "",
-    InputRepPerson: clientData.properties?.InputRepPerson?.people[0]?.name || "",
+    ClientIdPrefix: clientData.properties?.ID?.unique_id?.prefix || "ー",
+    ClientIdNumber: clientData.properties?.ID?.unique_id?.number || "ー",
+    ClientComponyName:
+      clientData.properties?.CompanyName?.title[0]?.plain_text || "（未入力）",
+    ClientServiceName:
+      clientData.properties?.ServiceName?.rich_text[0]?.plain_text || "ー",
+    ClientHearingDay: clientData.properties?.HearingDay?.date?.start || "ー",
+    InputRepPerson: clientData.properties?.InputRepPerson?.people[0]?.name || "ー",
   };
 };
 

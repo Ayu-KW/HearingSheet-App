@@ -14,8 +14,6 @@ export const getStaticProps = async () => {
 
 // データ内容の型定義
 type ClientData = {
-  ClientIdPrefix: string;
-  ClientIdNumber: number;
   ClientComponyName: string;
   ClientServiceName: string;
   ClientHearingDay: string;
@@ -67,14 +65,13 @@ const CustomerList: React.FC<{ allClientData: ClientData[] }> = ({ allClientData
             <tr className="border-b border-dashed border-b-gray-200" key={index}>
               <td className="border-r border-r-blue-400 p-2 text-center">{index + 1}</td>
               <td className="border-r border-r-blue-400 p-2">
-                {clientData.ClientComponyName} ／{" "}
-                {clientData.ClientServiceName || "（未入力）"}
+                {clientData.ClientComponyName} ／ {clientData.ClientServiceName}
               </td>
               <td className="border-r border-r-blue-400 p-2 text-center">
-                {clientData.InputRepPerson || "ー"}
+                {clientData.InputRepPerson}
               </td>
               <td className="border-r border-r-blue-400 p-2 text-center">
-                {clientData.ClientHearingDay || "ー"}
+                {clientData.ClientHearingDay}
               </td>
               <td className="border-r border-r-blue-400 p-2 text-center">
                 <LinkButton
