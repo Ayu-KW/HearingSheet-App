@@ -40,19 +40,13 @@ const getClientDataProperties = (clientData: any) => {
     ExistingSite_Trouble:
       clientData.properties?.ExistingSite_Trouble?.rich_text[0]?.plain_text || "",
     ExistingSite_URL: clientData.properties?.ExistingSite_Trouble?.url || "",
-    ExistingSite_PageConfiguration:
+    ExistingSite_PageConfiguration:x
       clientData.properties?.ExistingSite_PageConfiguration?.rich_text[0]?.plain_text ||
       "",
     ExistingSite_Note:
       clientData.properties?.ExistingSite_Note?.rich_text[0]?.plain_text || "",
     NewSite_Usage: clientData.properties?.NewSite_Usage?.select?.name || "",
-    NewSite_Objective:
-      clientData.properties?.NewSite_Objective?.rich_text[0]?.plain_text || "",
-    NewSite_PageConfiguration:
-      clientData.properties?.NewSite_PageConfiguration?.rich_text[0]?.plain_text || "",
-    NewSite_OpeningPreferredDate:
-      clientData.properties?.NewSite_OpeningPreferredDate?.rich_text[0]?.plain_text || "",
-    NewSite_Note: clientData.properties?.NewSite_Note?.number || "",
+    テスト: clientData.properties?.テスト?.rich_text[0]?.plain_text || "",
   };
 };
 

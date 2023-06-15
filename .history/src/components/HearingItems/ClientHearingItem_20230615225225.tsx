@@ -8,29 +8,17 @@ export const ClientHearingItem = ({ clientPage }: any) => {
     { title: "企業サイド：担当者名", text: clientPage.ClientRepPerson || "（未入力）" },
     { title: "制作サイド：担当者名", text: clientPage.InputRepPerson || "ー" },
     { title: "ヒアリング日時", text: clientPage.ClientHearingDay || "（未入力）" },
-    {
-      title: "既存サイト：有無",
-      text: clientPage.ExistingSite_Availability || "（未入力）",
-    },
-    { title: "既存サイト：悩み", text: clientPage.ExistingSite_Trouble || "ー" },
-    { title: "既存サイト：ＵＲＬ", text: clientPage.ExistingSite_URL || "ー" },
-    {
-      title: "既存サイト：ページ構成",
-      text: clientPage.ExistingSite_PageConfiguration || "ー",
-    },
-    { title: "既存サイト：備考", text: clientPage.ExistingSite_Note || "ー" },
-    { title: "新規サイト：案件カテゴリ", text: clientPage.NewSite_Usage || "（未入力）" },
-    { title: "新規サイト：目的", text: clientPage.NewSite_Objective || "（未入力）" },
-    {
-      title: "新規サイト：ページ構成",
-      text: clientPage.NewSite_PageConfiguration || "（未入力）",
-    },
-    {
-      title: "新規サイト：公開予定次期",
-      text: clientPage.NewSite_OpeningPreferredDate || "（未入力）",
-    },
-    { title: "新規サイト：予算", text: clientPage.NewSite_Budget || "（未入力）" },
-    { title: "新規サイト：備考", text: clientPage.NewSite_Note || "ー" },
+    { title: "既存サイト：有無", text: "データ未設定" },
+    { title: "既存サイト：悩み", text: "データ未設定" },
+    { title: "既存サイト：ＵＲＬ", text: "データ未設定" },
+    { title: "既存サイト：ページ構成", text: "データ未設定" },
+    { title: "既存サイト：備考", text: "データ未設定" },
+    { title: "新規サイト：案件カテゴリ", text: "データ未設定" },
+    { title: "新規サイト：目的", text: "データ未設定" },
+    { title: "新規サイト：ページ構成", text: "データ未設定" },
+    { title: "新規サイト：公開予定次期", text: "データ未設定" },
+    { title: "新規サイト：予算", text: "データ未設定" },
+    { title: "新規サイト：備考", text: "データ未設定" },
   ];
   return (
     <React.Fragment>

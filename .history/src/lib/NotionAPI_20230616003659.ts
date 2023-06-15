@@ -53,6 +53,7 @@ const getClientDataProperties = (clientData: any) => {
     NewSite_OpeningPreferredDate:
       clientData.properties?.NewSite_OpeningPreferredDate?.rich_text[0]?.plain_text || "",
     NewSite_Note: clientData.properties?.NewSite_Note?.number || "",
+    テスト: clientData.properties?.テスト?.rich_text[0]?.plain_text || "",
   };
 };
 

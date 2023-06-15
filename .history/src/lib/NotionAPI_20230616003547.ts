@@ -19,10 +19,10 @@ export const getAllClientData = async () => {
   });
   const allClientData = clientData.results;
   // 顧客情報１つずつのプロパティを取り出す
-  // return allClientData;
-  return allClientData.map((clientData) => {
-    return getClientDataProperties(clientData);
-  });
+  return allClientData;
+  // return allClientData.map((clientData) => {
+  //   return getClientDataProperties(clientData);
+  // });
 };
 
 // Notionデータベースのプロパティを指定する
@@ -53,6 +53,7 @@ const getClientDataProperties = (clientData: any) => {
     NewSite_OpeningPreferredDate:
       clientData.properties?.NewSite_OpeningPreferredDate?.rich_text[0]?.plain_text || "",
     NewSite_Note: clientData.properties?.NewSite_Note?.number || "",
+    テスト: clientData.properties?.テスト?.rich_text[0]?.plain_text || "",
   };
 };
 

@@ -31,6 +31,7 @@ export const ClientHearingItem = ({ clientPage }: any) => {
     },
     { title: "新規サイト：予算", text: clientPage.NewSite_Budget || "（未入力）" },
     { title: "新規サイト：備考", text: clientPage.NewSite_Note || "ー" },
+    { title: "テスト", text: clientPage.テスト },
   ];
   return (
     <React.Fragment>

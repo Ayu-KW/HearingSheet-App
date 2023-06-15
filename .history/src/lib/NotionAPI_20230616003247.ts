@@ -19,10 +19,10 @@ export const getAllClientData = async () => {
   });
   const allClientData = clientData.results;
   // 顧客情報１つずつのプロパティを取り出す
-  // return allClientData;
-  return allClientData.map((clientData) => {
-    return getClientDataProperties(clientData);
-  });
+  return allClientData;
+  // return allClientData.map((clientData) => {
+  //   return getClientDataProperties(clientData);
+  // });
 };
 
 // Notionデータベースのプロパティを指定する
@@ -46,13 +46,13 @@ const getClientDataProperties = (clientData: any) => {
     ExistingSite_Note:
       clientData.properties?.ExistingSite_Note?.rich_text[0]?.plain_text || "",
     NewSite_Usage: clientData.properties?.NewSite_Usage?.select?.name || "",
-    NewSite_Objective:
-      clientData.properties?.NewSite_Objective?.rich_text[0]?.plain_text || "",
+    NewSite_Objective: clientData.properties?.NewSite_Objective?.select?.name || "",
     NewSite_PageConfiguration:
-      clientData.properties?.NewSite_PageConfiguration?.rich_text[0]?.plain_text || "",
+      clientData.properties?.NewSite_PageConfiguration?.select?.name || "",
     NewSite_OpeningPreferredDate:
-      clientData.properties?.NewSite_OpeningPreferredDate?.rich_text[0]?.plain_text || "",
-    NewSite_Note: clientData.properties?.NewSite_Note?.number || "",
+      clientData.properties?.NewSite_OpeningPreferredDate?.select?.name || "",
+    NewSite_Budget: clientData.properties?.NewSite_Budget?.select?.name || "",
+    テスト: clientData.properties?.テスト?.rich_text[0]?.plain_text || "",
   };
 };
 
