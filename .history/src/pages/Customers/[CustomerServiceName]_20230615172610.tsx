@@ -1,4 +1,3 @@
-import { ClientHearingItem } from "@/components/HearingItems/ClientHearingItem";
 import { getAllClientData, getSingleClientData } from "@/lib/NotionAPI";
 import React from "react";
 
@@ -32,6 +31,7 @@ export const getStaticProps = async ({ params }: any) => {
 };
 
 const CustomerServiceName = ({ clientPage }: any) => {
+  console.log(clientPage);
   return (
     <main className="lg:w-2/3 md:w-4/5 sm:w-11/12 m-auto font-mono py-36">
       <div className="text-center mb-10">
@@ -40,8 +40,12 @@ const CustomerServiceName = ({ clientPage }: any) => {
           {clientPage.ClientComponyName} / {clientPage.ClientServiceName || "（未入力）"}
         </p>
       </div>
-      <dl className="grid grid-cols-4 border border-cyan-600 mt-5">
-        <ClientHearingItem clientPage={clientPage} />
+      <p>Company Name: {clientPage.ClientComponyName}</p>
+      <p>Service Name: {clientPage.ClientServiceName || "（未入力）"}</p>
+      <p>制作側 担当者: {clientPage.InputRepPerson || "ー"}</p>
+      <dl className="grid grid-cols-4 border border-blue-400">
+        <dt className="col-span-1 bg-sky-500 text-white">会社名</dt>
+        <dd className="col-span-3">{clientPage.ClientComponyName}</dd>
       </dl>
     </main>
   );

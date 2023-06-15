@@ -32,6 +32,7 @@ export const getStaticProps = async ({ params }: any) => {
 };
 
 const CustomerServiceName = ({ clientPage }: any) => {
+  console.log(clientPage);
   return (
     <main className="lg:w-2/3 md:w-4/5 sm:w-11/12 m-auto font-mono py-36">
       <div className="text-center mb-10">
@@ -41,7 +42,7 @@ const CustomerServiceName = ({ clientPage }: any) => {
         </p>
       </div>
       <dl className="grid grid-cols-4 border border-cyan-600 mt-5">
-        <ClientHearingItem clientPage={clientPage} />
+        {ClientHearingItem}
       </dl>
     </main>
   );

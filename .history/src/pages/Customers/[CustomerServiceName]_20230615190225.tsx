@@ -31,7 +31,10 @@ export const getStaticProps = async ({ params }: any) => {
   };
 };
 
+type ClientPage = {};
+
 const CustomerServiceName = ({ clientPage }: any) => {
+  console.log(clientPage);
   return (
     <main className="lg:w-2/3 md:w-4/5 sm:w-11/12 m-auto font-mono py-36">
       <div className="text-center mb-10">
