@@ -68,7 +68,7 @@ export const initialFields = [
     label: "既存サイト：ページ構成",
     type: "textarea",
     value: "",
-    placeholder: "例：トップページ＋下層ページ２ｐ（会社概要、問い合わせ）",
+    placeholder: "例：トップページ＋下層ページ２ｐ（概要、問い合わせ）",
     description: "既存サイトのページ構成を入力",
   },
   {
@@ -87,7 +87,7 @@ export const initialFields = [
   },
   {
     label: "新規サイト：目的",
-    type: "textarea",
+    type: "text",
     value: "",
     placeholder: "例：より多くのお客様に見てもらいたい",
     description: "新規サイトの目的を入力",
@@ -96,8 +96,7 @@ export const initialFields = [
     label: "新規サイト：ページ構成",
     type: "textarea",
     value: "",
-    placeholder:
-      "トップページ＋下層ページ５ｐ（会社概要、サービス内容、概要、問い合わせ）",
+    placeholder: "トップページ＋下層ページ２ｐ（概要、問い合わせ）",
     description: "新規サイトのページ構成を入力",
   },
   {
@@ -111,8 +110,8 @@ export const initialFields = [
     label: "新規サイト：予算",
     type: "number",
     value: "",
-    placeholder: "例：500000",
-    description: "新規サイトの予算を入力（半角数字のみ、カンマなし）",
+    placeholder: "",
+    description: "新規サイトの予算を入力してください。",
   },
   {
     label: "新規サイト：備考",
