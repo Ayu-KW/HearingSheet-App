@@ -25,6 +25,28 @@ export const getAllClientData = async () => {
   });
 };
 
+// // テスト（Notionデータベースのプロパティを指定する）
+// // 型定義
+// type ClientDataTest = {
+//   properties?: {
+//     CompanyName?: {
+//       title?: Array<{ plain_text?: string }>;
+//     };
+//     Industries?: {
+//       rich_text?: Array<{ plain_text?: string }>;
+//     };
+//   };
+// };
+// // データ取得
+// const getClientDataPropertiesTest = (clientDataTest: ClientDataTest) => {
+//   return {
+//     ClientComponyName:
+//       clientDataTest.properties?.CompanyName?.title?.[0]?.plain_text || "",
+//     ClientIndustries:
+//       clientDataTest.properties?.Industries?.rich_text?.[0]?.plain_text || "",
+//   };
+// };
+
 // Notionデータベースのプロパティを指定する
 // ？：型定義において「any」以外にする方法を模索したい（先に機能実装を優先させる）
 const getClientDataProperties = (clientData: any) => {
@@ -88,62 +110,25 @@ export const getSingleClientData = async (companyName: string, serviceName: stri
 };
 
 // データをNotionデータベースに追加する;
-export default async function createPage(clientData: any) {
-  const notion = new Client({ auth: process.env.NOTION_TOKEN });
+export const addClientData = async (clientData: any) => {
   try {
     const response = await notion.pages.create({
       parent: {
         database_id: process.env.NOTION_DATABASE_ID as string,
       },
       properties: {
-        CompanyName: {
+        Name: {
           type: "title",
-          title: [
-            {
-              type: "text",
-              text: {
-                content: clientData.CompanyName,
-              },
-            },
-          ],
+          title: [{ text: { content: note.name } }],
         },
-        ServiceName: {
-          type: "rich_text",
-          rich_text: [
-            {
-              type: "text",
-              text: {
-                content: clientData.ServiceName || "",
-              },
-            },
-          ],
-        },
-        // Industries: {
-        //   type: "rich_text",
-        //   rich_text: [
-        //     {
-        //       type: "text",
-        //       text: {
-        //         content: clientData.Industries,
-        //       },
-        //     },
-        //   ],
-        // },
-        CompanyRepPerson: {
-          type: "rich_text",
-          rich_text: [
-            {
-              type: "text",
-              text: {
-                content: clientData.CompanyRepPerson,
-              },
-            },
-          ],
+        Tags: {
+          type: "multi_select",
+          multi_select: note.tags.map((tag) => ({ name: tag })),
         },
       },
     });
-    // console.log(response);
-  } catch (error: any) {
-    throw new Error("Error creating page: " + error.message);
+    console.log("データが追加されました:", response);
+  } catch (error) {
+    console.error("エラー:", error);
   }
-}
+};

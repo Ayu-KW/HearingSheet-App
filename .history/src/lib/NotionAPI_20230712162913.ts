@@ -29,7 +29,6 @@ export const getAllClientData = async () => {
 // ？：型定義において「any」以外にする方法を模索したい（先に機能実装を優先させる）
 const getClientDataProperties = (clientData: any) => {
   return {
-    InputDay: clientData.created_time || "",
     ClientComponyName: clientData.properties?.CompanyName?.title[0]?.plain_text || "",
     ClientServiceName: clientData.properties?.ServiceName?.rich_text[0]?.plain_text || "",
     ClientHearingDay: clientData.properties?.HearingDay?.date?.start || "",
@@ -87,63 +86,17 @@ export const getSingleClientData = async (companyName: string, serviceName: stri
   return getClientDataProperties(clientPage);
 };
 
-// データをNotionデータベースに追加する;
-export default async function createPage(clientData: any) {
-  const notion = new Client({ auth: process.env.NOTION_TOKEN });
-  try {
-    const response = await notion.pages.create({
-      parent: {
-        database_id: process.env.NOTION_DATABASE_ID as string,
-      },
-      properties: {
-        CompanyName: {
-          type: "title",
-          title: [
-            {
-              type: "text",
-              text: {
-                content: clientData.CompanyName,
-              },
-            },
-          ],
-        },
-        ServiceName: {
-          type: "rich_text",
-          rich_text: [
-            {
-              type: "text",
-              text: {
-                content: clientData.ServiceName || "",
-              },
-            },
-          ],
-        },
-        // Industries: {
-        //   type: "rich_text",
-        //   rich_text: [
-        //     {
-        //       type: "text",
-        //       text: {
-        //         content: clientData.Industries,
-        //       },
-        //     },
-        //   ],
-        // },
-        CompanyRepPerson: {
-          type: "rich_text",
-          rich_text: [
-            {
-              type: "text",
-              text: {
-                content: clientData.CompanyRepPerson,
-              },
-            },
-          ],
-        },
-      },
-    });
-    // console.log(response);
-  } catch (error: any) {
-    throw new Error("Error creating page: " + error.message);
-  }
-}
+// データをNotionデータベースに追加する
+// export const addClientData = async (clientData: any) => {
+//   try {
+//     const response = await notion.pages.create({
+//       parent: {
+//         database_id: process.env.NOTION_DATABASE_ID as string,
+//       },
+//       properties: getClientDataProperties(clientData),
+//     });
+//     console.log("データが追加されました:", response);
+//   } catch (error) {
+//     console.error("エラー:", error);
+//   }
+// };

@@ -118,17 +118,17 @@ export default async function createPage(clientData: any) {
             },
           ],
         },
-        // Industries: {
-        //   type: "rich_text",
-        //   rich_text: [
-        //     {
-        //       type: "text",
-        //       text: {
-        //         content: clientData.Industries,
-        //       },
-        //     },
-        //   ],
-        // },
+        Industries: {
+          type: "rich_text",
+          rich_text: [
+            {
+              type: "text",
+              text: {
+                content: clientData.Industries,
+              },
+            },
+          ],
+        },
         CompanyRepPerson: {
           type: "rich_text",
           rich_text: [

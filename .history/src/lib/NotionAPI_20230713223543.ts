@@ -25,6 +25,28 @@ export const getAllClientData = async () => {
   });
 };
 
+// // テスト（Notionデータベースのプロパティを指定する）
+// // 型定義
+// type ClientDataTest = {
+//   properties?: {
+//     CompanyName?: {
+//       title?: Array<{ plain_text?: string }>;
+//     };
+//     Industries?: {
+//       rich_text?: Array<{ plain_text?: string }>;
+//     };
+//   };
+// };
+// // データ取得
+// const getClientDataPropertiesTest = (clientDataTest: ClientDataTest) => {
+//   return {
+//     ClientComponyName:
+//       clientDataTest.properties?.CompanyName?.title?.[0]?.plain_text || "",
+//     ClientIndustries:
+//       clientDataTest.properties?.Industries?.rich_text?.[0]?.plain_text || "",
+//   };
+// };
+
 // Notionデータベースのプロパティを指定する
 // ？：型定義において「any」以外にする方法を模索したい（先に機能実装を優先させる）
 const getClientDataProperties = (clientData: any) => {
@@ -118,31 +140,20 @@ export default async function createPage(clientData: any) {
             },
           ],
         },
-        // Industries: {
-        //   type: "rich_text",
-        //   rich_text: [
-        //     {
-        //       type: "text",
-        //       text: {
-        //         content: clientData.Industries,
-        //       },
-        //     },
-        //   ],
-        // },
-        CompanyRepPerson: {
+        Industries: {
           type: "rich_text",
           rich_text: [
             {
               type: "text",
               text: {
-                content: clientData.CompanyRepPerson,
+                content: clientData.Industries || "",
               },
             },
           ],
         },
       },
     });
-    // console.log(response);
+    console.log(response);
   } catch (error: any) {
     throw new Error("Error creating page: " + error.message);
   }

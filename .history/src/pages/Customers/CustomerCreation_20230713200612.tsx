@@ -2,13 +2,12 @@ import {
   ClientCreationHearingItem,
   initialFields,
 } from "@/components/HearingItems/ClientCreationHearingItem";
-import AddButton from "@/components/common/Button/addButton";
 import React, { useState } from "react";
 
 const CustomerCreation = () => {
-  // 入力欄の情報を管理
+  // 入力欄の情報
   const [fields, setFields] = useState(initialFields);
-  // 入力欄の内容を画面に反映させる
+  //
   const handleFieldChange = (
     index: number,
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -16,6 +15,43 @@ const CustomerCreation = () => {
     const updatedFields = [...fields];
     updatedFields[index].value = event.target.value;
     setFields(updatedFields);
+  };
+  // ボタン・データベースに追加
+  const handleSubmit = async () => {
+    try {
+      const currentDate = new Date();
+      const clientData = {
+        properties: {
+          CompanyName: {
+            title: [
+              {
+                text: {
+                  content: fields[0].value, // fields[0].value がページのタイトルとして設定される
+                },
+              },
+            ],
+          },
+        },
+      };
+
+      const response = await fetch("/api/create-page", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(clientData),
+      });
+
+      if (response.ok) {
+        console.log("データが送信されました");
+      } else {
+        const errorResponse = await response.json(); // エラーレスポンスの内容を取得
+        console.error("エラーレスポンス:", errorResponse);
+        throw new Error("Error creating page");
+      }
+    } catch (error) {
+      console.error("エラー:", error);
+    }
   };
 
   return (
@@ -47,7 +83,12 @@ const CustomerCreation = () => {
           fields={fields}
           handleFieldChange={handleFieldChange}
         />
-        <AddButton fields={fields}>送信</AddButton>
+        <button
+          className="bg-blue-500 text-white py-2 px-4 mt-4 rounded"
+          onClick={handleSubmit}
+        >
+          送信
+        </button>
       </section>
     </main>
   );

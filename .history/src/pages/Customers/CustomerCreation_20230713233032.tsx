@@ -48,6 +48,7 @@ const CustomerCreation = () => {
           handleFieldChange={handleFieldChange}
         />
         <AddButton fields={fields}>送信</AddButton>
+        <button onClick={console.log(fields)}>確認</button>
       </section>
     </main>
   );

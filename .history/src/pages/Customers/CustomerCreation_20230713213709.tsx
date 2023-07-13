@@ -17,6 +17,32 @@ const CustomerCreation = () => {
     updatedFields[index].value = event.target.value;
     setFields(updatedFields);
   };
+  // ボタンを押すとデータベースに追加される
+  // const handleSubmit = async () => {
+  //   try {
+  //     const currentDate = new Date();
+  //     // 対応する項目を指定
+  //     const clientData = {
+  //       InputDay: currentDate.toISOString(),
+  //       CompanyName: fields[0].value,
+  //       ServiceName: fields[1].value,
+  //     };
+  //     const response = await fetch("/api/create-page", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(clientData),
+  //     });
+  //     if (response.ok) {
+  //       console.log("データが送信されました");
+  //     } else {
+  //       throw new Error("Error creating page");
+  //     }
+  //   } catch (error) {
+  //     console.error("エラー:", error);
+  //   }
+  // };
 
   return (
     <main className="xl:w-2/3 lg:w-11/12 m-auto font-mono py-[100px] md:py-[150px] px-[30px]">
@@ -47,6 +73,12 @@ const CustomerCreation = () => {
           fields={fields}
           handleFieldChange={handleFieldChange}
         />
+        {/* <button
+          className="bg-blue-500 text-white py-2 px-4 mt-4 rounded"
+          onClick={handleSubmit}
+        >
+          送信
+        </button> */}
         <AddButton fields={fields}>送信</AddButton>
       </section>
     </main>

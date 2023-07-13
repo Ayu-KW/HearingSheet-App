@@ -17,6 +17,10 @@ const CustomerCreation = () => {
     updatedFields[index].value = event.target.value;
     setFields(updatedFields);
   };
+  // 確認する
+  const kakunin = {
+    console.log(fields),
+  }
 
   return (
     <main className="xl:w-2/3 lg:w-11/12 m-auto font-mono py-[100px] md:py-[150px] px-[30px]">
@@ -48,6 +52,7 @@ const CustomerCreation = () => {
           handleFieldChange={handleFieldChange}
         />
         <AddButton fields={fields}>送信</AddButton>
+        <button onClick={kakunin}>確認</button>
       </section>
     </main>
   );
