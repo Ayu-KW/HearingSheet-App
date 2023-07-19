@@ -15,16 +15,6 @@ const AddButton = ({ fields, children }: Props) => {
     InputRepPerson_2: fields[4].value,
     HearingDay: fields[5].value,
     ExistingSite_Availability: fields[6].value,
-    ExistingSite_Trouble: fields[7].value,
-    ExistingSite_URL: fields[8].value,
-    ExistingSite_PageConfiguration: fields[9].value,
-    ExistingSite_Note: fields[10].value,
-    NewSite_Usage: fields[11].value,
-    NewSite_Objective: fields[12].value,
-    NewSite_PageConfiguration: fields[13].value,
-    NewSite_OpeningPreferredDate: fields[14].value,
-    NewSite_Budget: fields[15].value,
-    NewSite_Note: fields[16].value,
   };
   // 確認用ログ確認
   // console.log({ clientData }, clientData);

@@ -228,28 +228,13 @@ export default async function createPage(clientData: any) {
             },
           ],
         },
-        NewSite_OpeningPreferredDate: {
+        NewSite_PageConfiguration: {
           type: "rich_text",
           rich_text: [
             {
               type: "text",
               text: {
-                content: clientData.NewSite_OpeningPreferredDate,
-              },
-            },
-          ],
-        },
-        NewSite_Budget: {
-          type: "number",
-          number: parseFloat(clientData.NewSite_Budget),
-        },
-        NewSite_Note: {
-          type: "rich_text",
-          rich_text: [
-            {
-              type: "text",
-              text: {
-                content: clientData.NewSite_Note,
+                content: clientData.NewSite_PageConfiguration,
               },
             },
           ],

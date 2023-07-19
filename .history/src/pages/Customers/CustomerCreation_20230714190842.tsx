@@ -13,6 +13,14 @@ const CustomerCreation = () => {
     index: number,
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
+    //
+    const value = event.target.value;
+    let convertedValue = value;
+    if (index === 5 && value) {
+      const date = new Date(value);
+      convertedValue = date.toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" });
+    }
+    // （説明を入れてください）
     const updatedFields = [...fields];
     updatedFields[index].value = event.target.value;
     setFields(updatedFields);

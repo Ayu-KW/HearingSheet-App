@@ -6,6 +6,14 @@ import AddButton from "@/components/common/Button/AddButton";
 import React, { useState } from "react";
 
 const CustomerCreation = () => {
+  const value = event.target.value;
+  let convertedValue = value; // 変換後の値を格納する変数
+
+  if (index === 5 && value) {
+    // ヒアリング日時フィールドの場合のみ変換を行う
+    const date = new Date(value);
+    convertedValue = date.toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" });
+  }
   // 入力欄の情報を管理
   const [fields, setFields] = useState(initialFields);
   // 入力欄の内容を画面に反映させる

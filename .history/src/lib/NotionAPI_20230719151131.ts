@@ -178,78 +178,13 @@ export default async function createPage(clientData: any) {
           type: "url",
           url: clientData.ExistingSite_URL,
         },
-        ExistingSite_PageConfiguration: {
+        ExistingSite_Trouble: {
           type: "rich_text",
           rich_text: [
             {
               type: "text",
               text: {
-                content: clientData.ExistingSite_PageConfiguration,
-              },
-            },
-          ],
-        },
-        ExistingSite_Note: {
-          type: "rich_text",
-          rich_text: [
-            {
-              type: "text",
-              text: {
-                content: clientData.ExistingSite_Note,
-              },
-            },
-          ],
-        },
-        NewSite_Usage: {
-          type: "select",
-          select: {
-            name: clientData.NewSite_Usage,
-          },
-        },
-        NewSite_Objective: {
-          type: "rich_text",
-          rich_text: [
-            {
-              type: "text",
-              text: {
-                content: clientData.NewSite_Objective,
-              },
-            },
-          ],
-        },
-        NewSite_PageConfiguration: {
-          type: "rich_text",
-          rich_text: [
-            {
-              type: "text",
-              text: {
-                content: clientData.NewSite_PageConfiguration,
-              },
-            },
-          ],
-        },
-        NewSite_OpeningPreferredDate: {
-          type: "rich_text",
-          rich_text: [
-            {
-              type: "text",
-              text: {
-                content: clientData.NewSite_OpeningPreferredDate,
-              },
-            },
-          ],
-        },
-        NewSite_Budget: {
-          type: "number",
-          number: parseFloat(clientData.NewSite_Budget),
-        },
-        NewSite_Note: {
-          type: "rich_text",
-          rich_text: [
-            {
-              type: "text",
-              text: {
-                content: clientData.NewSite_Note,
+                content: clientData.ExistingSite_Trouble,
               },
             },
           ],

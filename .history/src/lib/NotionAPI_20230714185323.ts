@@ -146,110 +146,18 @@ export default async function createPage(clientData: any) {
             {
               type: "text",
               text: {
-                content: clientData.InputRepPerson_2,
+                content: clientData.CompanyRepPerson,
               },
             },
           ],
         },
         HearingDay: {
           type: "date",
-          date: {
-            start: clientData.HearingDay,
-          },
-        },
-        ExistingSite_Availability: {
-          type: "select",
-          select: {
-            name: clientData.ExistingSite_Availability,
-          },
-        },
-        ExistingSite_Trouble: {
-          type: "rich_text",
-          rich_text: [
+          date: [
             {
               type: "text",
               text: {
-                content: clientData.ExistingSite_Trouble,
-              },
-            },
-          ],
-        },
-        ExistingSite_URL: {
-          type: "url",
-          url: clientData.ExistingSite_URL,
-        },
-        ExistingSite_PageConfiguration: {
-          type: "rich_text",
-          rich_text: [
-            {
-              type: "text",
-              text: {
-                content: clientData.ExistingSite_PageConfiguration,
-              },
-            },
-          ],
-        },
-        ExistingSite_Note: {
-          type: "rich_text",
-          rich_text: [
-            {
-              type: "text",
-              text: {
-                content: clientData.ExistingSite_Note,
-              },
-            },
-          ],
-        },
-        NewSite_Usage: {
-          type: "select",
-          select: {
-            name: clientData.NewSite_Usage,
-          },
-        },
-        NewSite_Objective: {
-          type: "rich_text",
-          rich_text: [
-            {
-              type: "text",
-              text: {
-                content: clientData.NewSite_Objective,
-              },
-            },
-          ],
-        },
-        NewSite_PageConfiguration: {
-          type: "rich_text",
-          rich_text: [
-            {
-              type: "text",
-              text: {
-                content: clientData.NewSite_PageConfiguration,
-              },
-            },
-          ],
-        },
-        NewSite_OpeningPreferredDate: {
-          type: "rich_text",
-          rich_text: [
-            {
-              type: "text",
-              text: {
-                content: clientData.NewSite_OpeningPreferredDate,
-              },
-            },
-          ],
-        },
-        NewSite_Budget: {
-          type: "number",
-          number: parseFloat(clientData.NewSite_Budget),
-        },
-        NewSite_Note: {
-          type: "rich_text",
-          rich_text: [
-            {
-              type: "text",
-              text: {
-                content: clientData.NewSite_Note,
+                start: clientData.HearingDay,
               },
             },
           ],

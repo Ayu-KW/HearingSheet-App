@@ -2,7 +2,7 @@ import {
   ClientCreationHearingItem,
   initialFields,
 } from "@/components/HearingItems/ClientCreationHearingItem";
-import AddButton from "@/components/common/Button/AddButton";
+import AddButton from "@/components/common/Button/addButton";
 import React, { useState } from "react";
 
 const CustomerCreation = () => {

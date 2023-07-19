@@ -241,18 +241,7 @@ export default async function createPage(clientData: any) {
         },
         NewSite_Budget: {
           type: "number",
-          number: parseFloat(clientData.NewSite_Budget),
-        },
-        NewSite_Note: {
-          type: "rich_text",
-          rich_text: [
-            {
-              type: "text",
-              text: {
-                content: clientData.NewSite_Note,
-              },
-            },
-          ],
+          number: clientData.NewSite_Budget,
         },
       },
     });

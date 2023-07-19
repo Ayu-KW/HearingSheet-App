@@ -23,8 +23,6 @@ const AddButton = ({ fields, children }: Props) => {
     NewSite_Objective: fields[12].value,
     NewSite_PageConfiguration: fields[13].value,
     NewSite_OpeningPreferredDate: fields[14].value,
-    NewSite_Budget: fields[15].value,
-    NewSite_Note: fields[16].value,
   };
   // 確認用ログ確認
   // console.log({ clientData }, clientData);

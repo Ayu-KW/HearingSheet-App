@@ -38,7 +38,7 @@ export const initialFields = [
   },
   {
     label: "ヒアリング日時",
-    type: "datetime-local",
+    type: "date",
     value: "",
     placeholder: "",
     description: "ヒアリングの日付を入力",
@@ -151,7 +151,7 @@ export const ClientCreationHearingItem = ({ fields, handleFieldChange }: any) =>
                 case "url":
                 case "number":
                 case "textarea":
-                case "datetime-local":
+                case "date":
                   return (
                     <div
                       className={`w-full col-span-2 before:content-[${field.description}] before:text-gray-400 before:text-xs`}
