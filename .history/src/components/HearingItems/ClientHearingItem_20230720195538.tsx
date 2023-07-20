@@ -17,10 +17,7 @@ export const ClientHearingItem = ({ clientPage }: any) => {
     { title: "業種", text: clientPage.ClientIndustries || "（未入力）" },
     { title: "企業サイド：担当者名", text: clientPage.ClientRepPerson || "（未入力）" },
     { title: "制作サイド：担当者名", text: clientPage.InputRepPerson || "ー" },
-    {
-      title: "ヒアリング日時",
-      text: formatDate(clientPage.ClientHearingDay || "（未入力）"),
-    },
+    { title: "ヒアリング日時", text: clientPage.ClientHearingDay || "（未入力）" },
     {
       title: "既存サイト：有無",
       text: clientPage.ExistingSite_Availability || "（未入力）",
