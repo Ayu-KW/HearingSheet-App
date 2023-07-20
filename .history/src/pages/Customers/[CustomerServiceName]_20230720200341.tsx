@@ -41,7 +41,7 @@ const CustomerServiceName = ({ clientPage }: any) => {
           {clientPage.ClientComponyName} / {clientPage.ClientServiceName || "（未入力）"}
         </p>
       </div>
-      <dl className="grid grid-cols-1 sm:grid-cols-4 border border-cyan-600 mt-5 mx-2">
+      <dl className="grid grid-cols-1 sm:grid-cols-4 border border-cyan-600 mt-1">
         <ClientHearingItem clientPage={clientPage} />
       </dl>
     </main>
