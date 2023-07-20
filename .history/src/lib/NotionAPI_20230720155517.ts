@@ -133,36 +133,15 @@ export default async function createPage(clientData: any) {
     };
   };
   const createDateProperty = (fieldName: string, fieldValue: string) => {
-    // fieldValueが空の場合、日付を送信しない
-    if (!fieldValue) {
-      return {};
-    }
-    // fieldValueを日本時間のDateオブジェクトに変換
-    const japanTime = new Date(fieldValue);
-    // 日本時間をISO 8601形式に変換
-    const isoDate =
-      japanTime.getFullYear() +
-      "-" +
-      String(japanTime.getMonth() + 1).padStart(2, "0") +
-      "-" +
-      String(japanTime.getDate()).padStart(2, "0") +
-      "T" +
-      String(japanTime.getHours()).padStart(2, "0") +
-      ":" +
-      String(japanTime.getMinutes()).padStart(2, "0") +
-      ":" +
-      String(japanTime.getSeconds()).padStart(2, "0") +
-      "+09:00"; // 日本時間のオフセット
     return {
       [fieldName]: {
         type: "date",
         date: {
-          start: isoDate,
+          start: fieldValue,
         },
       },
     };
   };
-
   // 出力
   try {
     const response = await notion.pages.create({

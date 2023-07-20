@@ -30,6 +30,10 @@ const AddButton = ({ fields, children }: Props) => {
   // console.log({ clientData }, clientData);
   // ボタンを押すとデータベースに追加される
   const handleSubmit = async () => {
+    // HearingDayがDateオブジェクトの場合、日本時間の文字列に変換
+    if (clientData.HearingDay instanceof Date) {
+      clientData.HearingDay = getJapanTimeString(clientData.HearingDay);
+    }
     try {
       const response = await fetch("/api/create-page", {
         method: "POST",

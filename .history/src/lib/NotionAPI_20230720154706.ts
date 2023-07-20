@@ -133,36 +133,15 @@ export default async function createPage(clientData: any) {
     };
   };
   const createDateProperty = (fieldName: string, fieldValue: string) => {
-    // fieldValueが空の場合、日付を送信しない
-    if (!fieldValue) {
-      return {};
-    }
-    // fieldValueを日本時間のDateオブジェクトに変換
-    const japanTime = new Date(fieldValue);
-    // 日本時間をISO 8601形式に変換
-    const isoDate =
-      japanTime.getFullYear() +
-      "-" +
-      String(japanTime.getMonth() + 1).padStart(2, "0") +
-      "-" +
-      String(japanTime.getDate()).padStart(2, "0") +
-      "T" +
-      String(japanTime.getHours()).padStart(2, "0") +
-      ":" +
-      String(japanTime.getMinutes()).padStart(2, "0") +
-      ":" +
-      String(japanTime.getSeconds()).padStart(2, "0") +
-      "+09:00"; // 日本時間のオフセット
     return {
       [fieldName]: {
         type: "date",
         date: {
-          start: isoDate,
+          start: fieldValue,
         },
       },
     };
   };
-
   // 出力
   try {
     const response = await notion.pages.create({
@@ -183,41 +162,38 @@ export default async function createPage(clientData: any) {
         },
         ...createRichTextProperty("ServiceName", clientData.ServiceName || ""),
         ...createRichTextProperty("Industries", clientData.Industries || ""),
-        ...createRichTextProperty("CompanyRepPerson", clientData.CompanyRepPerson || ""),
-        ...createRichTextProperty("InputRepPerson_2", clientData.InputRepPerson_2 || ""),
+        ...createRichTextProperty("CompanyRepPerson", clientData.CompanyRepPerson),
+        ...createRichTextProperty("InputRepPerson_2", clientData.InputRepPerson_2),
         ...createDateProperty("HearingDay", clientData.HearingDay || ""),
         ...createSelectProperty(
           "ExistingSite_Availability",
-          clientData.ExistingSite_Availability || "その他"
+          clientData.ExistingSite_Availability || ""
         ),
         ...createRichTextProperty(
           "ExistingSite_Trouble",
           clientData.ExistingSite_Trouble || ""
         ),
-        ...createUrlProperty("ExistingSite_URL", clientData.ExistingSite_URL || " "),
+        ...createUrlProperty("ExistingSite_URL", clientData.ExistingSite_URL),
         ...createRichTextProperty(
           "ExistingSite_PageConfiguration",
-          clientData.ExistingSite_PageConfiguration || ""
+          clientData.ExistingSite_PageConfiguration
         ),
         ...createRichTextProperty(
           "ExistingSite_Note",
           clientData.ExistingSite_Note || ""
         ),
-        ...createSelectProperty("NewSite_Usage", clientData.NewSite_Usage || "その他"),
+        ...createSelectProperty("NewSite_Usage", clientData.NewSite_Usage),
         ...createRichTextProperty("NewSite_Objective", clientData.NewSite_Objective),
         ...createRichTextProperty(
           "NewSite_PageConfiguration",
-          clientData.NewSite_PageConfiguration || ""
+          clientData.NewSite_PageConfiguration
         ),
         ...createRichTextProperty(
           "NewSite_OpeningPreferredDate",
-          clientData.NewSite_OpeningPreferredDate || ""
+          clientData.NewSite_OpeningPreferredDate
         ),
-        ...createNumberProperty(
-          "NewSite_Budget",
-          parseFloat(clientData.NewSite_Budget || "")
-        ),
-        ...createRichTextProperty("NewSite_Note", clientData.NewSite_Note || ""),
+        ...createNumberProperty("NewSite_Budget", parseFloat(clientData.NewSite_Budget)),
+        ...createRichTextProperty("NewSite_Note", clientData.NewSite_Note),
       },
     });
     // console.log(response);

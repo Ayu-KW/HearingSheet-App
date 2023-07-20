@@ -28,8 +28,18 @@ const AddButton = ({ fields, children }: Props) => {
   };
   // ログ確認用
   // console.log({ clientData }, clientData);
+  // 日本時間の文字列を取得するユーティリティ関数
+  const getJapanTimeString = (date: Date) => {
+    return date.toLocaleString("ja-JP", {
+      timeZone: "Asia/Tokyo",
+    });
+  };
   // ボタンを押すとデータベースに追加される
   const handleSubmit = async () => {
+    // HearingDayがDateオブジェクトの場合、日本時間の文字列に変換
+    if (clientData.HearingDay instanceof Date) {
+      clientData.HearingDay = getJapanTimeString(clientData.HearingDay);
+    }
     try {
       const response = await fetch("/api/create-page", {
         method: "POST",

@@ -23,9 +23,6 @@ type ClientData = {
 };
 // 日付をフォーマットする関数
 const formatDate = (dateString: string) => {
-  if (!dateString) {
-    return "ー"; // 空文字列を返す
-  }
   const date = new Date(dateString);
   const year = date.getFullYear();
   const month = String(date.getMonth() + 1).padStart(2, "0");
@@ -85,7 +82,7 @@ const CustomerList: React.FC<{ allClientData: ClientData[] }> = ({ allClientData
                 {clientData.InputRepPerson || "ー"}
               </td>
               <td className="border-r border-r-blue-400 p-2 text-center">
-                {formatDate(clientData.ClientHearingDay) || "ー"}
+                {clientData.ClientHearingDay || "ー"}
               </td>
               <td className="border-r border-r-blue-400 p-2 text-center">
                 <LinkButton

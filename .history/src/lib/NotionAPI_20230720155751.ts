@@ -137,27 +137,20 @@ export default async function createPage(clientData: any) {
     if (!fieldValue) {
       return {};
     }
-    // fieldValueを日本時間のDateオブジェクトに変換
-    const japanTime = new Date(fieldValue);
-    // 日本時間をISO 8601形式に変換
-    const isoDate =
-      japanTime.getFullYear() +
-      "-" +
-      String(japanTime.getMonth() + 1).padStart(2, "0") +
-      "-" +
-      String(japanTime.getDate()).padStart(2, "0") +
-      "T" +
-      String(japanTime.getHours()).padStart(2, "0") +
-      ":" +
-      String(japanTime.getMinutes()).padStart(2, "0") +
-      ":" +
-      String(japanTime.getSeconds()).padStart(2, "0") +
-      "+09:00"; // 日本時間のオフセット
+
+    // fieldValueをDateオブジェクトに変換
+    const date = new Date(fieldValue);
+
+    // タイムゾーンを日本（Asia/Tokyo）に設定
+    const japanTime = date.toLocaleString("ja-JP", {
+      timeZone: "Asia/Tokyo",
+    });
+
     return {
       [fieldName]: {
         type: "date",
         date: {
-          start: isoDate,
+          start: japanTime,
         },
       },
     };

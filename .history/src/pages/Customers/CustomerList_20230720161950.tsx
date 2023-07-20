@@ -26,6 +26,7 @@ const formatDate = (dateString: string) => {
   if (!dateString) {
     return "ー"; // 空文字列を返す
   }
+
   const date = new Date(dateString);
   const year = date.getFullYear();
   const month = String(date.getMonth() + 1).padStart(2, "0");
