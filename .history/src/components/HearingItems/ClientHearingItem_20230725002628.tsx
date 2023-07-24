@@ -42,8 +42,7 @@ export const ClientHearingItem = ({ clientPage }: any) => {
           <a
             href={clientPage.ExistingSite_URL}
             target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-orange-500 hover:font-bold"
+            className="hover:text-orange-500"
           >
             {clientPage.ExistingSite_URL}
           </a>

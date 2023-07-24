@@ -35,20 +35,7 @@ export const ClientHearingItem = ({ clientPage }: any) => {
       text: clientPage.ExistingSite_Availability || "（未入力）",
     },
     { title: "既存サイト：悩み", text: clientPage.ExistingSite_Trouble || "ー" },
-    {
-      title: "既存サイト：ＵＲＬ",
-      text:
-        (
-          <a
-            href={clientPage.ExistingSite_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-orange-500 hover:font-bold"
-          >
-            {clientPage.ExistingSite_URL}
-          </a>
-        ) || "ー",
-    },
+    { title: "既存サイト：ＵＲＬ", text: clientPage.ExistingSite_URL || "ー" },
     {
       title: "既存サイト：ページ構成",
       text: clientPage.ExistingSite_PageConfiguration || "ー",

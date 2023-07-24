@@ -39,12 +39,7 @@ export const ClientHearingItem = ({ clientPage }: any) => {
       title: "既存サイト：ＵＲＬ",
       text:
         (
-          <a
-            href={clientPage.ExistingSite_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-orange-500 hover:font-bold"
-          >
+          <a href={clientPage.ExistingSite_URL} target="_blank" rel="noopener noreferrer">
             {clientPage.ExistingSite_URL}
           </a>
         ) || "ー",

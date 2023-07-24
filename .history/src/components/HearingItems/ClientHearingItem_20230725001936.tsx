@@ -24,8 +24,8 @@ export const ClientHearingItem = ({ clientPage }: any) => {
     { title: "会社名", text: clientPage.ClientComponyName },
     { title: "サービス名", text: clientPage.ClientServiceName || "（未入力）" },
     { title: "業種", text: clientPage.ClientIndustries || "（未入力）" },
-    { title: "企業サイド：担当者名", text: clientPage.CompanyRepPerson || "（未入力）" },
-    { title: "制作サイド：担当者名", text: clientPage.InputRepPerson_2 || "ー" },
+    { title: "企業サイド：担当者名", text: clientPage.ClientRepPerson || "（未入力）" },
+    { title: "制作サイド：担当者名", text: clientPage.InputRepPerson2 || "ー" },
     {
       title: "ヒアリング日時",
       text: formatDate(clientPage.ClientHearingDay || "（未入力）"),
@@ -35,20 +35,7 @@ export const ClientHearingItem = ({ clientPage }: any) => {
       text: clientPage.ExistingSite_Availability || "（未入力）",
     },
     { title: "既存サイト：悩み", text: clientPage.ExistingSite_Trouble || "ー" },
-    {
-      title: "既存サイト：ＵＲＬ",
-      text:
-        (
-          <a
-            href={clientPage.ExistingSite_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-orange-500 hover:font-bold"
-          >
-            {clientPage.ExistingSite_URL}
-          </a>
-        ) || "ー",
-    },
+    { title: "既存サイト：ＵＲＬ", text: clientPage.ExistingSite_URL || "ー" },
     {
       title: "既存サイト：ページ構成",
       text: clientPage.ExistingSite_PageConfiguration || "ー",

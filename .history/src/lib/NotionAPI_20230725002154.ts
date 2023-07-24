@@ -45,7 +45,7 @@ const getClientDataProperties = (clientData: any) => {
       clientData.properties?.ExistingSite_Availability?.select?.name || "",
     ExistingSite_Trouble:
       clientData.properties?.ExistingSite_Trouble?.rich_text[0]?.plain_text || "",
-    ExistingSite_URL: clientData.properties?.ExistingSite_URL?.url || "",
+    ExistingSite_URL: clientData.properties?.ExistingSite_Trouble?.url || "",
     ExistingSite_PageConfiguration:
       clientData.properties?.ExistingSite_PageConfiguration?.rich_text[0]?.plain_text ||
       "",
