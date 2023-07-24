@@ -123,7 +123,14 @@ export const initialFields = [
   },
 ];
 
-export const ClientCreationHearingItem = ({ fields, handleFieldChange }: any) => {
+export const ClientCreationHearingItem = ({ fields, handleFieldChange, isSent }: any) => {
+  if (isSent) {
+    return (
+      <div>
+        <p className="text-green-600 font-bold mt-4">送信完了</p>
+      </div>
+    );
+  }
   return (
     <React.Fragment>
       {fields.map((field: any, index: number) => (

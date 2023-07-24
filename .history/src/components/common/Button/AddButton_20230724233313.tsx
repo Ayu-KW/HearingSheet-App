@@ -29,6 +29,12 @@ const AddButton = ({ fields, children, setIsSent, setFields }: Props) => {
     NewSite_Budget: fields[15].value,
     NewSite_Note: fields[16].value,
   };
+
+  // 初期値で新しいオブジェクトを作成する関数
+  const resetFields = () => {
+    const resetFields = initialFields.map((field) => ({ ...field, value: "" }));
+    setFields(resetFields);
+  };
   // ログ確認用
   // console.log({ clientData }, clientData);
 
@@ -46,7 +52,6 @@ const AddButton = ({ fields, children, setIsSent, setFields }: Props) => {
         console.log("データが送信されました");
         setIsSent(true);
         setFields([...initialFields]); // 送信完了後に入力欄をリセット
-        console.log(fields); // 送信ボタンがクリックされた後の fields の値を確認
       } else {
         throw new Error("Error creating page");
       }
@@ -54,7 +59,10 @@ const AddButton = ({ fields, children, setIsSent, setFields }: Props) => {
       console.error("エラー:", error);
     }
   };
-
+  // 確認用
+  useEffect(() => {
+    console.log("リセット後のfields:", fields);
+  }, [fields]);
   return (
     <button
       className="bg-blue-500 text-white py-2 px-4 mt-4 rounded"

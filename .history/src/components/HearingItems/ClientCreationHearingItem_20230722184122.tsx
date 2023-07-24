@@ -189,7 +189,7 @@ export const ClientCreationHearingItem = ({ fields, handleFieldChange }: any) =>
                       )}
                       {field.type === "textarea" ? (
                         <textarea
-                          className="bg-gray-200 rounded-sm p-2 w-full col-span-2 break-words min-h-[120px]"
+                          className="bg-gray-200 rounded-sm p-2 w-full col-span-2 break-words"
                           value={field.value || ""}
                           placeholder={field.placeholder}
                           onChange={(event) => handleFieldChange(index, event)}

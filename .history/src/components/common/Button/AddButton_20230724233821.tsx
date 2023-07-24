@@ -46,7 +46,6 @@ const AddButton = ({ fields, children, setIsSent, setFields }: Props) => {
         console.log("データが送信されました");
         setIsSent(true);
         setFields([...initialFields]); // 送信完了後に入力欄をリセット
-        console.log(fields); // 送信ボタンがクリックされた後の fields の値を確認
       } else {
         throw new Error("Error creating page");
       }

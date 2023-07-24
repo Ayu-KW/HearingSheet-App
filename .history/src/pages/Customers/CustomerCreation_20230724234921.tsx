@@ -21,11 +21,14 @@ const CustomerCreation = () => {
     setFields(updatedFields);
   };
 
-  // ページがマウントされた際に初期値リセット
+  // ページがマウントされた際に初期値でリセット
   useEffect(() => {
-    const resetFields = initialFields.map((field) => ({ ...field, value: "" }));
-    setFields(resetFields);
+    setFields(initialFields);
   }, []);
+  // // 確認用
+  useEffect(() => {
+    console.log("fields の値が変化しました:", fields);
+  }, [fields]);
 
   return (
     <main className="xl:w-2/3 lg:w-11/12 m-auto font-mono py-[100px] md:py-[150px] px-4">

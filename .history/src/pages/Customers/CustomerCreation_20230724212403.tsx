@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
 import {
   ClientCreationHearingItem,
   initialFields,
 } from "@/components/HearingItems/ClientCreationHearingItem";
 import AddButton from "@/components/common/Button/AddButton";
 import LinkButton from "@/components/common/Button/LinkButton";
+import React, { useState } from "react";
 
 const CustomerCreation = () => {
   // 入力欄の情報を管理
@@ -20,12 +20,6 @@ const CustomerCreation = () => {
     updatedFields[index].value = event.target.value;
     setFields(updatedFields);
   };
-
-  // ページがマウントされた際に初期値リセット
-  useEffect(() => {
-    const resetFields = initialFields.map((field) => ({ ...field, value: "" }));
-    setFields(resetFields);
-  }, []);
 
   return (
     <main className="xl:w-2/3 lg:w-11/12 m-auto font-mono py-[100px] md:py-[150px] px-4">
@@ -52,37 +46,22 @@ const CustomerCreation = () => {
         </div>
       </div>
       <section className="py-5 lg:py-10 px-5 lg:px-10 m-auto border-sky-300 border shadow-lg shadow-slate-200 md:w-fit grid gap-y-1.5">
+        <ClientCreationHearingItem
+          fields={fields}
+          handleFieldChange={handleFieldChange}
+          isSent={isSent}
+        />
         {isSent ? (
-          <>
-            <h3 className="text-2xl font-bold text-center">送信完了</h3>
-            <p className="">
-              新規データの追加・送信完了いたしました。
-              <br />
-              念の為、
-              <LinkButton
-                url={"CustomerList"}
-                style={
-                  "inline-block text-sky-500 font-bold hover:text-orange-400 hover:duration-200"
-                }
-              >
-                顧客一覧ページ
-              </LinkButton>
-              にてデータが追加されているご確認ください。
-            </p>
-            <LinkButton url={"/"} style={"mt-3 mx-auto p-2 w-fit bg-sky-500 text-white"}>
-              トップに戻る
-            </LinkButton>
-          </>
+                <div>
+                <p className="text-green-600 font-bold mt-4">送信完了</p>
+              </div>
+          <LinkButton url={"/"} style={""}>
+            トップに戻る
+          </LinkButton>
         ) : (
-          <>
-            <ClientCreationHearingItem
-              fields={fields}
-              handleFieldChange={handleFieldChange}
-            />
-            <AddButton fields={fields} setIsSent={setIsSent} setFields={setFields}>
-              送信
-            </AddButton>
-          </>
+          <AddButton fields={fields} setIsSent={setIsSent}>
+            送信
+          </AddButton>
         )}
       </section>
     </main>

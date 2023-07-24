@@ -123,7 +123,7 @@ export const initialFields = [
   },
 ];
 
-export const ClientCreationHearingItem = ({ fields, handleFieldChange }: any) => {
+export const ClientCreationHearingItem = ({ fields, handleFieldChange, isSent }: any) => {
   return (
     <React.Fragment>
       {fields.map((field: any, index: number) => (

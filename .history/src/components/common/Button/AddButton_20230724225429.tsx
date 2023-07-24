@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { initialFields } from "@/components/HearingItems/ClientCreationHearingItem"; // 初期値をインポート
+import React from "react";
 
 type Props = {
   fields: any;
@@ -31,7 +30,6 @@ const AddButton = ({ fields, children, setIsSent, setFields }: Props) => {
   };
   // ログ確認用
   // console.log({ clientData }, clientData);
-
   // ボタンを押すとデータベースに追加される
   const handleSubmit = async () => {
     try {
@@ -45,8 +43,7 @@ const AddButton = ({ fields, children, setIsSent, setFields }: Props) => {
       if (response.ok) {
         console.log("データが送信されました");
         setIsSent(true);
-        setFields([...initialFields]); // 送信完了後に入力欄をリセット
-        console.log(fields); // 送信ボタンがクリックされた後の fields の値を確認
+        setFields(initialData);
       } else {
         throw new Error("Error creating page");
       }

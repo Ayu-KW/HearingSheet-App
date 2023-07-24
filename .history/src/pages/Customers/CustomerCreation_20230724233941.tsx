@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
 import {
   ClientCreationHearingItem,
   initialFields,
 } from "@/components/HearingItems/ClientCreationHearingItem";
 import AddButton from "@/components/common/Button/AddButton";
 import LinkButton from "@/components/common/Button/LinkButton";
+import React, { useEffect, useState } from "react";
 
 const CustomerCreation = () => {
   // 入力欄の情報を管理
@@ -21,11 +21,10 @@ const CustomerCreation = () => {
     setFields(updatedFields);
   };
 
-  // ページがマウントされた際に初期値リセット
+  // 確認用
   useEffect(() => {
-    const resetFields = initialFields.map((field) => ({ ...field, value: "" }));
-    setFields(resetFields);
-  }, []);
+    console.log("リセット後のfields:", fields);
+  }, [fields]);
 
   return (
     <main className="xl:w-2/3 lg:w-11/12 m-auto font-mono py-[100px] md:py-[150px] px-4">

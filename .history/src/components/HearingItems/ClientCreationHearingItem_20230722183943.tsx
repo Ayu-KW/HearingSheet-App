@@ -150,6 +150,7 @@ export const ClientCreationHearingItem = ({ fields, handleFieldChange }: any) =>
                 case "text":
                 case "url":
                 case "number":
+                case "textarea":
                 case "datetime-local":
                   return (
                     <div
@@ -161,35 +162,6 @@ export const ClientCreationHearingItem = ({ fields, handleFieldChange }: any) =>
                       {field.type === "textarea" ? (
                         <textarea
                           className="bg-gray-200 rounded-sm p-2 w-full col-span-2 break-words"
-                          value={field.value || ""}
-                          placeholder={field.placeholder}
-                          onChange={(event) => handleFieldChange(index, event)}
-                        />
-                      ) : (
-                        <input
-                          type={field.type}
-                          className={`bg-gray-200 rounded-sm p-2 w-full overflow-hidden break-words${
-                            field.type === "number" ? " no-spin" : ""
-                          }`}
-                          style={{ overflowWrap: "break-word", wordWrap: "break-word" }}
-                          value={field.value || ""}
-                          placeholder={field.placeholder}
-                          onChange={(event) => handleFieldChange(index, event)}
-                        />
-                      )}
-                    </div>
-                  );
-                case "textarea":
-                  return (
-                    <div
-                      className={`w-full col-span-2 before:content-[${field.description}] before:text-gray-400 before:text-xs`}
-                    >
-                      {field.description && (
-                        <span className="text-gray-400 text-xs">{field.description}</span>
-                      )}
-                      {field.type === "textarea" ? (
-                        <textarea
-                          className="bg-gray-200 rounded-sm p-2 w-full col-span-2 break-words min-h-[120px]"
                           value={field.value || ""}
                           placeholder={field.placeholder}
                           onChange={(event) => handleFieldChange(index, event)}
