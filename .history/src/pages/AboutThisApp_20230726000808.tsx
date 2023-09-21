@@ -55,36 +55,27 @@ const AboutThisApp = () => {
         <div className="px-3">
           <h4 className="text-lg font-bold">＜使用するNotion・データベースについて＞</h4>
           <p>
-            本アプリケーションを使用するには「Notionインテグレーションの設定（Notion固有のIDの取得）」と「Notionデータベースの作成（データベースIDの取得）」を行う必要があります。
+            本アプリケーションを使用するには「Notionインテグレーションの設定（Notion固有のID）」と「Notionデータベースの作成（データベースIDの取得）」を行う必要があります。
           </p>
           <p>現在はユーザー側で設定することは出来ないので、作成者にお問合せください。</p>
         </div>
         <div className="mt-2 px-3">
           <h4 className="text-lg font-bold">＜基本的な利用手順＞</h4>
           <details className="ml-3">
-            <summary className="mt-1 text-lg text-cyan-500 font-bold">
-              《顧客・ヒアリング情報の新規登録（新規登録ページ）》
+            <summary className="text-lg text-cyan-500 font-bold">
+              《新規登録ページで情報を登録する（登録画面）》
             </summary>
             <ul className="ml-6">
-              <li>1.現在確認できている情報を各種入力する</li>
-              <li>2.入力後に「送信ボタン」を押す → 完了画面が出てくる</li>
-              <li>3.</li>
+              <li className="">1.現在確認できている情報を各種入力する</li>
+              <li className="">2.入力後に「送信ボタン」を押す</li>
             </ul>
           </details>
           <details className="ml-3">
             <summary className="text-lg text-cyan-500 font-bold">
-              《顧客・ヒアリング情報を確認する（顧客一覧ページ）》
+              《顧客一覧ページで情報を確認する（確認画面）》
             </summary>
             <ul className="ml-6">
-              <li>1.</li>
-            </ul>
-          </details>
-          <details className="ml-3">
-            <summary className="text-lg text-cyan-500 font-bold">
-              《登録済みの顧客・ヒアリング情報を変更する（顧客一覧ページ）》
-            </summary>
-            <ul className="ml-6">
-              <li>1.</li>
+              <li className="">1.</li>
             </ul>
           </details>
         </div>
@@ -100,40 +91,25 @@ const AboutThisApp = () => {
               Ayu）」と申します。名古屋在住、27歳の主婦です。
             </p>
             <p>
-              2023年7月現在、将来的にエンジニア転職（Web系）をしたいと考えているため独学で学習しております。
+              2023年6月現在はエンジニア転職（Web系）を目指しながら独学で学習しており、8月以降から本格的に転職活動を行おうとしております。
             </p>
             <p></p>
           </div>
           <div className="mt-3">
-            <div>
-              <h4
-                className="text-lg w-fit px-1 relative
+            <h4
+              className="text-lg w-fit px-1 relative
   before:absolute before:w-full before:bottom-0 before:left-0 before:h-3 before:bg-amber-200 before:opacity-70 before:-z-10"
-              >
-                本アプリを制作した背景
-              </h4>
-              <p>
-                このヒアリングシートアプリを制作した背景として
-                <span className="text-lg font-bold md:block">
-                  「Web制作におけるディレクション（情報のまとめ方）の大変さ」
-                </span>
-                を体感した為です。
-              </p>
-              <p>また</p>
-            </div>
-            <div>
-              <h4
-                className="text-lg w-fit px-1 relative
-  before:absolute before:w-full before:bottom-0 before:left-0 before:h-3 before:bg-amber-200 before:opacity-70 before:-z-10"
-              >
-                案件経歴
-              </h4>
-              <p>これまでにWebサイト制作の案件（エンド案件）を2件請け負いました。</p>
-              <p>
-                ※1件目は「ディレクション・企画・コーディング」を行い、2件目は「ディレクション・企画」を担当
-              </p>
-              <p></p>
-            </div>
+            >
+              本アプリを制作した背景
+            </h4>
+            <p>
+              このヒアリングシートアプリを制作した背景として「Web制作におけるディレクション（情報のまとめ方）の大変さ」を味わった為です。
+            </p>
+            <p>これまでにWebサイト制作の案件（エンド案件）を2件請け負いました。</p>
+            <p>
+              ※1件目は「ディレクション・企画・コーディング」を行い、2件目は「ディレクション・企画」を担当
+            </p>
+            <p></p>
           </div>
         </div>
       </section>

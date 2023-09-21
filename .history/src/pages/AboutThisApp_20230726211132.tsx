@@ -67,7 +67,7 @@ const AboutThisApp = () => {
             </summary>
             <ul className="ml-6">
               <li>1.現在確認できている情報を各種入力する</li>
-              <li>2.入力後に「送信ボタン」を押す → 完了画面が出てくる</li>
+              <li>2.入力後に「送信ボタン」を押す→完了画面が出てくる</li>
               <li>3.</li>
             </ul>
           </details>

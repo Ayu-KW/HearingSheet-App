@@ -66,9 +66,8 @@ const AboutThisApp = () => {
               《顧客・ヒアリング情報の新規登録（新規登録ページ）》
             </summary>
             <ul className="ml-6">
-              <li>1.現在確認できている情報を各種入力する</li>
-              <li>2.入力後に「送信ボタン」を押す → 完了画面が出てくる</li>
-              <li>3.</li>
+              <li className="">1.現在確認できている情報を各種入力する</li>
+              <li className="">2.入力後に「送信ボタン」を押す</li>
             </ul>
           </details>
           <details className="ml-3">
@@ -76,7 +75,7 @@ const AboutThisApp = () => {
               《顧客・ヒアリング情報を確認する（顧客一覧ページ）》
             </summary>
             <ul className="ml-6">
-              <li>1.</li>
+              <li className="">1.</li>
             </ul>
           </details>
           <details className="ml-3">
@@ -84,7 +83,7 @@ const AboutThisApp = () => {
               《登録済みの顧客・ヒアリング情報を変更する（顧客一覧ページ）》
             </summary>
             <ul className="ml-6">
-              <li>1.</li>
+              <li className="">1.</li>
             </ul>
           </details>
         </div>
